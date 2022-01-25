@@ -1,0 +1,31 @@
+{
+    "name": "python-slack-bot-playground",
+    "description": "Python Slack bot sample.",
+    "repository": "https://github.com/Doarakko/python-slack-bot-playground",
+    "keywords": [
+        "bot",
+        "slack bot",
+        "python"
+    ],
+    "env": {
+        "SLACK_APP_TOKEN": {
+            "description": "Enter your slack app token.",
+            "value": "xapp-aaaa"
+        },
+        "SLACK_BOT_TOKEN": {
+            "description": "Enter your slack bot token.",
+            "value": "xoxb-bbbb"
+        }
+    },
+    "buildpacks": [
+        {
+            "url": "https://github.com/heroku/heroku-buildpack-python"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
