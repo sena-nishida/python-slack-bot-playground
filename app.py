@@ -14,9 +14,9 @@ logging.basicConfig(level=logging.INFO)
 app = App(token=os.environ["SLACK_BOT_TOKEN"])
 
 
-@app.message("hi")
+@app.message("^.*【通報】コミュニティに通報がありました。.*$")
 def hello(say):
-    say("Hello!")
+    say("<@UUHFHSYEL>")
 
 
 @app.event("app_mention")
@@ -24,7 +24,7 @@ def say_when_app_mention(say):
     say("Shut up.")
 
 
-@app.message("^.*<@{}>.*$".format("UC734HMC4"))
+@app.message("^.*<>.*$".format("UC734HMC4"))
 def say_when_some_mention(say):
     say("He is busy.")
 
